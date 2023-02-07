@@ -12,8 +12,11 @@ A project related to traveling. As of now, only UI📱 is ready.
 <p> 
     <img width="200" src="https://user-images.githubusercontent.com/115228605/217231159-b7abd1e8-d12e-41cc-a022-0119c739dbfa.jpeg" alt="something was here🤔">
  <img width="200" src="https://user-images.githubusercontent.com/115228605/217231376-9a2af054-9aaa-4138-aa55-b42b7bdce3d7.jpeg" alt="something was here🤔">
+<img width="200" src="https://user-images.githubusercontent.com/115228605/217236931-798f014b-2f73-44a8-a416-7e9cc6ec9001.gif" alt="something was here🤔">
+<img width="200" src="https://user-images.githubusercontent.com/115228605/217237616-f68a9f6c-470d-423a-a807-c40a2cb197aa.gif" alt="something was here🤔">
 
 </p>
+
 
 ## Getting Started
 
