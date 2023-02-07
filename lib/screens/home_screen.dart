@@ -180,7 +180,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: const CountryListTile(
                         rating: 3,
                         countryName: "Bali, Indonesia ",
-                        placeName: 'Kutta Beach',
+                        placeName: 'Kuta Beach',
                         heartType: FontAwesomeIcons.solidHeart,
                         imgUrl:
                             'https://img.traveltriangle.com/blog/wp-content/uploads/2018/08/Kuta-Beach-cover.jpg'),

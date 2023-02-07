@@ -142,7 +142,7 @@ class BagaBeachScreen extends StatelessWidget {
                             Text(
                               "₹ 20,000/person",
                               style: TextStyle(
-                                  fontSize: deviceHeight(context) * 0.031,
+                                  fontSize: deviceHeight(context) * 0.026,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.white),
                               maxLines: 1,
