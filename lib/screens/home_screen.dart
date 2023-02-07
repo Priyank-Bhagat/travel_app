@@ -1,7 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:travel_app/screens/baga_beach_screen.dart';
+
+import '../widgets/country_list_tile.dart';
+import 'kuta_beach_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -92,13 +97,13 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   'Choose Category',
                   style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                 ),
                 TextButton(
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       'See all',
                       style: TextStyle(fontSize: 15, color: Colors.grey),
                     ))
@@ -112,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   selectedColor: Colors.transparent,
                   avatar: Image.asset("assets/images/beach.png",
                       matchTextDirection: false, width: 30.0),
-                  label: Text(
+                  label: const Text(
                     'Beach   ',
                     style: TextStyle(fontSize: 17),
                   ),
@@ -120,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   side: BorderSide(
                       color: _isSelectedBeach ? Colors.green : Colors.white,
                       width: 1),
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
                           topRight: Radius.circular(5),
                           bottomRight: Radius.circular(5),
@@ -141,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   selectedColor: Colors.transparent,
                   avatar: Image.asset("assets/images/mountain.png",
                       matchTextDirection: false, width: 40.0),
-                  label: Text(
+                  label: const Text(
                     'Mountain',
                     style: TextStyle(fontSize: 17),
                   ),
@@ -149,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   side: BorderSide(
                       color: _isSelectedMount ? Colors.green : Colors.white,
                       width: 1),
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
                           topRight: Radius.circular(5),
                           bottomRight: Radius.circular(5),
@@ -163,32 +168,42 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            Container(
+            SizedBox(
               height: 240,
               child: ListView(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
-                physics: ClampingScrollPhysics(),
+                physics: const ClampingScrollPhysics(),
                 children: [
-                  CountryListTile(
-                      rating: 3,
-                      countryName: "Bali, Indonesia ",
-                      placeName: 'Kutta Beach',
-                      heartType: FontAwesomeIcons.solidHeart,
-                      imgUrl:
-                          'https://img.traveltriangle.com/blog/wp-content/uploads/2018/08/Kuta-Beach-cover.jpg'),
-                  CountryListTile(
-                    countryName: "Goa, India ",
-                    placeName: 'Baga Beach',
-                    heartType: FontAwesomeIcons.heart,
-                    imgUrl:
-                        'https://media.istockphoto.com/id/690209132/photo/beach-in-goa-india.jpg?s=612x612&w=0&k=20&c=joh2NkmPg-lCOseVgQf-mBEjcusslquNr1ft0l4yjYc=',
-                    rating: 5,
+                  GestureDetector(
+                    child: const CountryListTile(
+                        rating: 3,
+                        countryName: "Bali, Indonesia ",
+                        placeName: 'Kutta Beach',
+                        heartType: FontAwesomeIcons.solidHeart,
+                        imgUrl:
+                            'https://img.traveltriangle.com/blog/wp-content/uploads/2018/08/Kuta-Beach-cover.jpg'),
+                    onTap: (){
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const KutaBeachScreen() ),);
+                    },
                   ),
-                  CountryListTile(
+                  GestureDetector(
+                    child: const CountryListTile(
+                      countryName: "Goa, India ",
+                      placeName: 'Baga Beach',
+                      heartType: FontAwesomeIcons.heart,
+                      imgUrl:
+                          'https://media.istockphoto.com/id/690209132/photo/beach-in-goa-india.jpg?s=612x612&w=0&k=20&c=joh2NkmPg-lCOseVgQf-mBEjcusslquNr1ft0l4yjYc=',
+                      rating: 5,
+                    ),
+                    onTap: (){
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BagaBeachScreen() ),);
+                    },
+                  ),
+                  const CountryListTile(
                       rating: 4,
                       countryName: "Goa, India ",
                       placeName: 'Palolem Beach',
@@ -201,13 +216,13 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   'Popular Package',
                   style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                 ),
                 TextButton(
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       'See all',
                       style: TextStyle(fontSize: 15, color: Colors.grey),
                     ))
@@ -218,11 +233,11 @@ class _HomeScreenState extends State<HomeScreen> {
               child: InkWell(
                 child: Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
                       border: Border.all(color: Colors.blue.shade100)),
                   height: deviceHeight(context) * 0.17,
                   child: Padding(
-                    padding: EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.only(left: 10),
                     child: Row(
                       children: <Widget>[
                         ClipRRect(
@@ -234,20 +249,20 @@ class _HomeScreenState extends State<HomeScreen> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        SizedBox(width: 15.0),
-                        Container(
+                        const SizedBox(width: 15.0),
+                        SizedBox(
                           height: deviceHeight(context) * 0.14,
                           width: MediaQuery.of(context).size.width - 130.0,
                           child: ListView(
                             primary: false,
-                            physics: NeverScrollableScrollPhysics(),
+                            physics: const NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
                             children: <Widget>[
                               Container(
                                 padding: EdgeInsets.only(
                                     top: deviceHeight(context) * 0.009),
                                 alignment: Alignment.centerLeft,
-                                child: Text(
+                                child: const Text(
                                   "Kuta Resort",
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
@@ -260,7 +275,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               SizedBox(height: deviceHeight(context) * 0.01),
                               Container(
                                 alignment: Alignment.centerLeft,
-                                child: Text(
+                                child: const Text(
                                   "₹ 20,000",
                                   style: TextStyle(
                                     fontSize: 18.0,
@@ -270,7 +285,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   textAlign: TextAlign.left,
                                 ),
                               ),
-                              SizedBox(height: 10.0),
+                              const SizedBox(height: 10.0),
                               RatingBar.builder(
                                 itemSize: 12,
                                 initialRating: 3,
@@ -278,15 +293,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                 direction: Axis.horizontal,
                                 allowHalfRating: true,
                                 itemCount: 5,
-                                itemBuilder: (context, _) => Icon(
+                                itemBuilder: (context, _) => const Icon(
                                   Icons.star,
                                   color: Colors.amber,
                                 ),
                                 onRatingUpdate: (rating) {
-                                  print(rating);
+                                  if (kDebugMode) {
+                                    print(rating);
+                                  }
                                 },
                               ),
-                              SizedBox(height: 15.0),
+                              const SizedBox(height: 15.0),
                               Container(
                                 alignment: Alignment.centerLeft,
                                 child: Text(
@@ -313,11 +330,11 @@ class _HomeScreenState extends State<HomeScreen> {
               child: InkWell(
                 child: Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
                       border: Border.all(color: Colors.blue.shade100)),
                   height: deviceHeight(context) * 0.17,
                   child: Padding(
-                    padding: EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.only(left: 10),
                     child: Row(
                       children: <Widget>[
                         ClipRRect(
@@ -329,20 +346,20 @@ class _HomeScreenState extends State<HomeScreen> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        SizedBox(width: 15.0),
-                        Container(
+                        const SizedBox(width: 15.0),
+                        SizedBox(
                           height: deviceHeight(context) * 0.14,
                           width: MediaQuery.of(context).size.width - 130.0,
                           child: ListView(
                             primary: false,
-                            physics: NeverScrollableScrollPhysics(),
+                            physics: const NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
                             children: <Widget>[
                               Container(
                                 padding: EdgeInsets.only(
                                     top: deviceHeight(context) * 0.009),
                                 alignment: Alignment.centerLeft,
-                                child: Text(
+                                child: const Text(
                                   "Baga Resort",
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
@@ -355,7 +372,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               SizedBox(height: deviceHeight(context) * 0.01),
                               Container(
                                 alignment: Alignment.centerLeft,
-                                child: Text(
+                                child: const Text(
                                   "₹ 38,000",
                                   style: TextStyle(
                                     fontSize: 18.0,
@@ -365,7 +382,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   textAlign: TextAlign.left,
                                 ),
                               ),
-                              SizedBox(height: 10.0),
+                              const SizedBox(height: 10.0),
                               RatingBar.builder(
                                 itemSize: 12,
                                 initialRating: 5,
@@ -373,15 +390,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                 direction: Axis.horizontal,
                                 allowHalfRating: true,
                                 itemCount: 5,
-                                itemBuilder: (context, _) => Icon(
+                                itemBuilder: (context, _) => const Icon(
                                   Icons.star,
                                   color: Colors.amber,
                                 ),
                                 onRatingUpdate: (rating) {
-                                  print(rating);
+                                  if (kDebugMode) {
+                                    print(rating);
+                                  }
                                 },
                               ),
-                              SizedBox(height: 15.0),
+                              const SizedBox(height: 15.0),
                               Container(
                                 alignment: Alignment.centerLeft,
                                 child: Text(
@@ -408,11 +427,11 @@ class _HomeScreenState extends State<HomeScreen> {
               child: InkWell(
                 child: Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
                       border: Border.all(color: Colors.blue.shade100)),
                   height: deviceHeight(context) * 0.17,
                   child: Padding(
-                    padding: EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.only(left: 10),
                     child: Row(
                       children: <Widget>[
                         ClipRRect(
@@ -424,20 +443,20 @@ class _HomeScreenState extends State<HomeScreen> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        SizedBox(width: 15.0),
-                        Container(
+                        const SizedBox(width: 15.0),
+                        SizedBox(
                           height: deviceHeight(context) * 0.14,
                           width: MediaQuery.of(context).size.width - 130.0,
                           child: ListView(
                             primary: false,
-                            physics: NeverScrollableScrollPhysics(),
+                            physics: const NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
                             children: <Widget>[
                               Container(
                                 padding: EdgeInsets.only(
                                     top: deviceHeight(context) * 0.009),
                                 alignment: Alignment.centerLeft,
-                                child: Text(
+                                child: const Text(
                                   "Palolem Resort",
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
@@ -450,7 +469,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               SizedBox(height: deviceHeight(context) * 0.01),
                               Container(
                                 alignment: Alignment.centerLeft,
-                                child: Text(
+                                child: const Text(
                                   "₹ 24,000",
                                   style: TextStyle(
                                     fontSize: 18.0,
@@ -460,7 +479,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   textAlign: TextAlign.left,
                                 ),
                               ),
-                              SizedBox(height: 10.0),
+                              const SizedBox(height: 10.0),
                               RatingBar.builder(
                                 itemSize: 12,
                                 initialRating: 4,
@@ -468,15 +487,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                 direction: Axis.horizontal,
                                 allowHalfRating: true,
                                 itemCount: 5,
-                                itemBuilder: (context, _) => Icon(
+                                itemBuilder: (context, _) => const Icon(
                                   Icons.star,
                                   color: Colors.amber,
                                 ),
                                 onRatingUpdate: (rating) {
-                                  print(rating);
+                                  if (kDebugMode) {
+                                    print(rating);
+                                  }
                                 },
                               ),
-                              SizedBox(height: 15.0),
+                              const SizedBox(height: 15.0),
                               Container(
                                 alignment: Alignment.centerLeft,
                                 child: Text(
@@ -505,128 +526,3 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class CountryListTile extends StatelessWidget {
-  final String placeName;
-  final String countryName;
-  final String imgUrl;
-  final IconData heartType;
-  final num rating;
-  CountryListTile(
-      {required this.placeName,
-      required this.imgUrl,
-      required this.countryName,
-      required this.heartType,
-      required this.rating});
-
-  double deviceWidth(BuildContext context) => MediaQuery.of(context).size.width;
-
-  double deviceHeight(BuildContext context) =>
-      MediaQuery.of(context).size.height;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(right: 8),
-      child: Stack(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(16),
-            child: CachedNetworkImage(
-              imageUrl: imgUrl,
-              height: 220,
-              width: 150,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Container(
-            height: 200,
-            width: 150,
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Container(
-                        margin: EdgeInsets.only(right: 8, top: 8),
-                        height: 30,
-                        width: 30,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(30)),
-                            color: Colors.white),
-                        child: IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              heartType,
-                              color: Colors.red,
-                              size: 15,
-                            )))
-                  ],
-                ),
-                Spacer(),
-                Row(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(bottom: 10, left: 8, right: 8),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            child: Text(
-                              placeName,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 16),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 3,
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                FontAwesomeIcons.locationDot,
-                                size: 15,
-                                color: Colors.white54,
-                              ),
-                              Text(
-                                countryName,
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 12),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                  ],
-                ),
-                Padding(
-                  padding: EdgeInsets.all(deviceWidth(context) * 0.01),
-                  child: Row(
-                    children: List.generate(5, (index) {
-                      return index < rating
-                          ? Icon(
-                              Icons.star,
-                              color: Colors.yellow.shade500,
-                              size: 19,
-                            )
-                          : Icon(
-                              Icons.star_border,
-                              color: Colors.white,
-                              size: 19,
-                            );
-                    }),
-                  ),
-                )
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
