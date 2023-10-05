@@ -7,8 +7,6 @@
 A project related to traveling. As of now, only UI📱 is ready.
 
 ## Demo
-
-👉[Download Apk](https://github.com/Priyank-Bhagat/travel_app/raw/master/resource/Travel_app.apk)👈The Travel App and give it a go.
 <p> 
     <img width="200" src="https://user-images.githubusercontent.com/115228605/217231159-b7abd1e8-d12e-41cc-a022-0119c739dbfa.jpeg" alt="something was here🤔">
  <img width="200" src="https://user-images.githubusercontent.com/115228605/217231376-9a2af054-9aaa-4138-aa55-b42b7bdce3d7.jpeg" alt="something was here🤔">
@@ -16,6 +14,11 @@ A project related to traveling. As of now, only UI📱 is ready.
 <img width="200" src="https://user-images.githubusercontent.com/115228605/217237616-f68a9f6c-470d-423a-a807-c40a2cb197aa.gif" alt="something was here🤔">
 
 </p>
+
+## Download
+
+
+👉[Download Apk](https://mega.nz/file/5zNjHTRR#ZmuWOYFL-0IxeF-GQXZB414BOPRkWQjA9vWB64HQhqA)👈The Travel App and give it a go.
 
 
 ## Getting Started
