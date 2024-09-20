@@ -18,7 +18,7 @@ A project related to traveling. As of now, only UI📱 is ready.
 ## Download
 
 
-👉[Download Apk](https://mega.nz/file/5zNjHTRR#ZmuWOYFL-0IxeF-GQXZB414BOPRkWQjA9vWB64HQhqA)👈The Travel App and give it a go.
+👉[Download Apk](https://drive.google.com/file/d/1xJwAvf3oKzAgXR5yL-XolXLRY2NY4Yn4/view?usp=sharing)👈The Travel App and give it a go.
 
 
 ## Getting Started
